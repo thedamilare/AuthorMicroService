@@ -55,7 +55,7 @@ class Handler extends ExceptionHandler
     {
         if($exception instanceof HttpException){
             $code = $exception->getStatusCode();
-            $message = Respnse::$statusText[$code];
+            $message = Response::$statusTexts[$code];
             return $this->errorResponse($message, $code);
         }
         if($exception instanceof ModelNotFoundException)
